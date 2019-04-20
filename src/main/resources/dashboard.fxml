@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.joshkupka.development.controllers.DashboardController">
+   <children>
+      <ImageView fitHeight="317.0" fitWidth="960.0" layoutX="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Sub%20Wars%20Logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="signInButton" layoutX="549.0" layoutY="341.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="SIGN IN" textAlignment="CENTER">
+         <font>
+            <Font name="Outrun future Bold" size="43.0" />
+         </font>
+      </Button>
+      <Button fx:id="optionsButton" layoutX="600.0" layoutY="560.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Options" visible="false">
+         <font>
+            <Font name="outrun future" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="630.0" layoutY="657.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Exit" visible="false">
+         <font>
+            <Font name="outrun future" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="startButton" layoutX="572.0" layoutY="441.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Start" visible="false">
+         <font>
+            <Font name="outrun future" size="43.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
