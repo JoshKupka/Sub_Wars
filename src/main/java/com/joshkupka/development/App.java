@@ -18,6 +18,7 @@ import java.nio.file.Paths;
  */
 public class App extends Application {
 
+    Database database = new Database();
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("dashboard.fxml"));
@@ -28,7 +29,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
-        /*
+
         Path path = Paths.get("UserData.json");
         if (Files.exists(path)) {
             System.out.println("YES");
@@ -38,7 +39,7 @@ public class App extends Application {
             database.databaseInit();
             database.putData("First-Run", true);
         }
-        */
+
     }
 
     public static void main(String[] args){

@@ -13,7 +13,7 @@
             <Image url="@Sub%20Wars%20Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="signInButton" layoutX="559.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="SIGN IN" textAlignment="CENTER">
+      <Button fx:id="signInButton" layoutX="559.0" layoutY="337.0" mnemonicParsing="false" onAction="#signInProcess" style="-fx-background-color: transparent;" text="SIGN IN" textAlignment="CENTER">
          <font>
             <Font name="Copperplate Light" size="43.0" />
          </font>
