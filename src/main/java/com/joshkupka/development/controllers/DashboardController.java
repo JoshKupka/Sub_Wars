@@ -2,8 +2,10 @@ package com.joshkupka.development.controllers;
 
 import com.joshkupka.development.Database;
 import com.joshkupka.development.Twitch;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,6 +23,18 @@ public class DashboardController {
     private File jsonSettings = new File("UserData.json");
     private Database database = new Database();
     private static String url = "https://id.twitch.tv/oauth2/authorize?client_id=unjoi1gmlhfl4lm2yhha620mdbds0j&redirect_uri=http://localhost&response_type=token&scope=user:edit+bits:read+channel_check_subscription+channel_editor+channel_read+channel_subscriptions+chat:edit+chat:read";
+
+    @FXML
+    private Button optionsButton;
+
+    @FXML
+    private Button signInButton;
+
+    @FXML
+    private Button startButton;
+
+    @FXML
+    private Button exitButton;
 
     @FXML
     private void signInProcess() {
@@ -61,6 +75,8 @@ public class DashboardController {
             catch (Exception e) {
                 e.printStackTrace();
             }
+        } else {
+            displayData();
         }
     }
 
@@ -84,6 +100,7 @@ public class DashboardController {
             }
         });
         popup.showAndWait();
+        displayData();
         return result.toString();
     }
 
@@ -92,5 +109,13 @@ public class DashboardController {
         String apikey = database.getData("apiKey").toString();
         String userData = twitch.getUser(apikey).toString();
         return userData;
+    }
+
+    private void displayData(){
+        Platform.runLater(() -> {
+            signInButton.setVisible(false);
+            optionsButton.setVisible(true);
+            startButton.setVisible(true);
+        });
     }
 }
